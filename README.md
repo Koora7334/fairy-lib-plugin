@@ -1,2 +1,2 @@
-# fairy-bukkit-template
-The bukkit project template with fairy framework
+# fairy-lib-plugin
+The bukkit plugin for fairy framework in library form. 

@@ -12,5 +12,5 @@ pluginManagement {
     }
 }
 
-rootProject.name = "fairy-bukkit-template"
+rootProject.name = "fairy-lib-plugin"
 
