@@ -1,15 +1,15 @@
-package org.example.template;
+package io.fairyproject.library;
 
 import io.fairyproject.FairyLaunch;
 import io.fairyproject.log.Log;
 import io.fairyproject.plugin.Plugin;
 
 @FairyLaunch
-public class BukkitTemplatePlugin extends Plugin {
+public class FairyLibPlugin extends Plugin {
 
     @Override
     public void onPluginEnable() {
-        Log.info("Plugin Enabled.");
+        Log.info("Fairy Lib Plugin enabled.");
     }
 
 }

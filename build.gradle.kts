@@ -3,17 +3,17 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 fun properties(key: String) = project.findProperty(key).toString()
 
 plugins {
-    //Java plugin
+    // Java plugin
     id("java-library")
 
-    //Fairy framework plugin
-    id("io.fairyproject") version "0.7.1b6-SNAPSHOT"
+    // Fairy plugin
+    id("io.fairyproject")
 
     // Dependency management plugin
     id("io.spring.dependency-management") version "1.1.0"
 
     //Kotlin plugin
-    id("org.jetbrains.kotlin.jvm") version "1.9.22" apply false
+    id("org.jetbrains.kotlin.jvm") version "1.9.23"
 
     //Shadow plugin, provides the ability to shade fairy and other dependencies to compiled jar
     id("com.github.johnrengelman.shadow") version "7.1.2"
@@ -28,9 +28,11 @@ fairy {
     // Main Package
     mainPackage.set(properties("package"))
     // Fairy Package
-    fairyPackage.set(properties("package") + ".fairy")
+    fairyPackage.set("io.fairyproject")
 
     bukkitProperties().bukkitApi = "1.13"
+    bukkitProperties().foliaSupported = true
+    bukkitProperties().description = "Fairy framework in library form"
 }
 
 runServer {
@@ -38,10 +40,11 @@ runServer {
 }
 
 dependencies {
-    api("io.fairyproject:bukkit-bundles")
+    runtimeOnly("io.fairyproject:bukkit-bootstrap")
+    api("io.fairyproject:bukkit-platform")
     api("io.fairyproject:module.animation")
     api("io.fairyproject:bukkit-command")
-    api("io.fairyproject:bukkit-menu")
+    api("io.fairyproject:bukkit-gui")
     api("io.fairyproject:module.hologram")
     api("io.fairyproject:module.config")
     api("io.fairyproject:bukkit-xseries")
@@ -53,6 +56,11 @@ dependencies {
     api("io.fairyproject:bukkit-timer")
     api("io.fairyproject:bukkit-nbt")
     api("io.fairyproject:module.tablist")
+
+    // Kotlin Libraries
+    api(kotlin("stdlib-jdk8"))
+    api(kotlin("stdlib"))
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
 }
 
 // Repositories
@@ -73,7 +81,11 @@ dependencies {
 
 tasks.withType(ShadowJar::class.java) {
     // Relocate fairy to avoid plugin conflict
-    relocate("io.fairyproject", "${properties("package")}.fairy")
-    relocate("net.kyori", "${properties("package")}.fairy.libs.kyori")
-    relocate("com.cryptomorin.xseries", "${properties("package")}.fairy.libs.xseries")
+    relocate("net.kyori", "io.fairyproject.libs.kyori")
+    relocate("com.cryptomorin.xseries", "io.fairyproject.libs.xseries")
+    relocate("org.yaml.snakeyaml", "io.fairyproject.libs.snakeyaml")
+    relocate("com.google.gson", "io.fairyproject.libs.gson")
+    relocate("com.github.retrooper.packetevents", "io.fairyproject.libs.packetevents")
+    relocate("io.github.retrooper.packetevents", "io.fairyproject.libs.packetevents")
+    relocate("io.fairyproject.bootstrap", "io.fairyproject.library.bootstrap")
 }
