@@ -56,11 +56,6 @@ dependencies {
     api("io.fairyproject:bukkit-timer")
     api("io.fairyproject:bukkit-nbt")
     api("io.fairyproject:module.tablist")
-
-    // Kotlin Libraries
-    api(kotlin("stdlib-jdk8"))
-    api(kotlin("stdlib"))
-    api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
 }
 
 // Repositories
