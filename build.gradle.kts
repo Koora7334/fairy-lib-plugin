@@ -13,7 +13,7 @@ plugins {
     id("io.spring.dependency-management") version "1.1.0"
 
     //Kotlin plugin
-    id("org.jetbrains.kotlin.jvm") version "1.9.23"
+    id("org.jetbrains.kotlin.jvm") version "1.9.23" apply false
 
     //Shadow plugin, provides the ability to shade fairy and other dependencies to compiled jar
     id("com.github.johnrengelman.shadow") version "7.1.2"
