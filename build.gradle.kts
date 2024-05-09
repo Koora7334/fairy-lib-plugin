@@ -42,20 +42,20 @@ runServer {
 dependencies {
     runtimeOnly("io.fairyproject:bukkit-bootstrap")
     api("io.fairyproject:bukkit-platform")
-    api("io.fairyproject:module.animation")
+    api("io.fairyproject:mc-animation")
     api("io.fairyproject:bukkit-command")
     api("io.fairyproject:bukkit-gui")
-    api("io.fairyproject:module.hologram")
-    api("io.fairyproject:module.config")
+    api("io.fairyproject:mc-hologram")
+    api("io.fairyproject:core-config")
     api("io.fairyproject:bukkit-xseries")
     api("io.fairyproject:bukkit-items")
-    api("io.fairyproject:module.nametag")
-    api("io.fairyproject:module.sidebar")
+    api("io.fairyproject:mc-nametag")
+    api("io.fairyproject:mc-sidebar")
     api("io.fairyproject:bukkit-visibility")
     api("io.fairyproject:bukkit-visual")
     api("io.fairyproject:bukkit-timer")
     api("io.fairyproject:bukkit-nbt")
-    api("io.fairyproject:module.tablist")
+    api("io.fairyproject:mc-tablist")
 }
 
 // Repositories
