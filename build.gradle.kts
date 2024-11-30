@@ -33,6 +33,7 @@ fairy {
     bukkitProperties().bukkitApi = "1.13"
     bukkitProperties().foliaSupported = true
     bukkitProperties().description = "Fairy framework in library form"
+    bukkitProperties().loadBefore += "CoordinateOffset"
 }
 
 runServer {
