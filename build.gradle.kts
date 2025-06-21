@@ -81,7 +81,7 @@ tasks.withType(ShadowJar::class.java) {
     relocate("com.cryptomorin.xseries", "io.fairyproject.libs.xseries")
     relocate("org.yaml.snakeyaml", "io.fairyproject.libs.snakeyaml")
     relocate("com.google.gson", "io.fairyproject.libs.gson")
-    relocate("com.github.retrooper.packetevents", "io.fairyproject.libs.packetevents")
+    // relocate("com.github.retrooper.packetevents", "io.fairyproject.libs.packetevents")
     // relocate("io.github.retrooper.packetevents", "io.fairyproject.libs.packetevents")
     relocate("de.tr7zw.changeme.nbtapi", "io.fairyproject.libs.nbtapi")
     relocate("io.fairyproject.bootstrap", "io.fairyproject.library.bootstrap")
